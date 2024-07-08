@@ -1,0 +1,13 @@
+
+
+<div class="mx-auto max-w-screen-xl">
+    @if ( productsStates.state.status() === 'loading' ){
+        <p>Loading...</p>
+    }@else{
+        <div class="grid grid-cols-[repeat(4,300px)] gap-6">
+            @for (product of productsStates.state().products; track product) {
+                <app-product-card class="block" [product]="product"/>
+            }
+        </div>
+    }
+</div>
